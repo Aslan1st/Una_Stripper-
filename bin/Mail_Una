@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+require 'Open3'
+require 'mail'
+
+output = Open3.capture3("ruby bin/TestEvents")
+
+File.open('./test.txt', 'w') do |f|
+  output.each do |d|
+    f.write(d)
+  end
+end
+
+Mail.defaults do
+  delivery_method :smtp, {
+    :address => 'smtp.gmail.com',
+    :port => 587,
+    :user_name => 'smallslive@gmail.com',
+    :password => '',
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+end
+
+Mail.deliver do
+  from     'smallslive@gmail.com'
+  to       'una.stade@gmail.com'
+  #to       'una.stade@gmail.com'
+  subject  'Did you fail?'
+  body     'yo, this is aslans program. check the attached file.'
+  add_file 'C:\Users\Aslan\Desktop\Event_Tester\test.txt'
+end
+
+gets.chomp
+
+puts "An e-mail was sent to Una with this output. ctrl+c to exit"

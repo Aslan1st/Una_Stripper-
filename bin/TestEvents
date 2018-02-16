@@ -3,6 +3,3 @@
 require_relative '../lib/strip.rb'
 
 loop_webpages(3)
-
-puts "ctrl+c to exit"
-gets.chomp
