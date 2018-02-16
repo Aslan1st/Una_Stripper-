@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o&lt;n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&amp;&amp;(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&amp;&amp;(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&amp;&amp;(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o&lt;0?0:o);++r&lt;o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&amp;&amp;window.performance.timing&amp;&amp;"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&amp;&amp;e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&amp;&amp;e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f&lt;c;f++)u[f].apply(a,r);var p=s[y[n]];return p&amp;&amp;p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&amp;&amp;(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&amp;&amp;"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&amp;&amp;e.licenseKey&amp;&amp;e.applicationID&amp;&amp;t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&amp;&amp;i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&amp;&amp;performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&amp;&amp;w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&amp;&amp;g&amp;&amp;g[l]&amp;&amp;!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+      <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"queueTime":3,"beacon":"bam.nr-data.net","licenseKey":"c51dfc0874","transactionName":"NAcAbRRYWEQHWkQLDQ1NJEwIWkJeCVcfBxQGDBZKSE9fUhFKCjEBCwcGTApcYF4DTh4FBxc=","errorBeacon":"bam.nr-data.net","applicationID":"8847638","applicationTime":102,"agent":""}</script>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <title>Calendar/Archive - SmallsLIVE</title>
+      <link href="//dzycyuuhttkib.cloudfront.net/static/css/application.ef1b960ce7c3.css" rel="stylesheet" type="text/css"/>
+      <link rel="apple-touch-icon" sizes="57x57" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-57x57.0fc044729731.png"/>
+      <link rel="apple-touch-icon" sizes="60x60" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-60x60.644be7efdc11.png"/>
+      <link rel="apple-touch-icon" sizes="72x72" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-72x72.1d12a667c65f.png"/>
+      <link rel="apple-touch-icon" sizes="76x76" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-76x76.0d15fce32d69.png"/>
+      <link rel="apple-touch-icon" sizes="114x114" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-114x114.b1d25406e42d.png"/>
+      <link rel="apple-touch-icon" sizes="120x120" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-120x120.ff009865b1b2.png"/>
+      <link rel="apple-touch-icon" sizes="144x144" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-144x144.633fe98ace9d.png"/>
+      <link rel="apple-touch-icon" sizes="152x152" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-152x152.ded1596511d1.png"/>
+      <link rel="apple-touch-icon" sizes="180x180" href="//dzycyuuhttkib.cloudfront.net/static/favicon/apple-touch-icon-180x180.66dabbac1a06.png"/>
+      <link rel="icon" type="image/png" href="//dzycyuuhttkib.cloudfront.net/static/favicon/favicon-32x32.86841b7de79c.png" sizes="32x32"/>
+      <link rel="icon" type="image/png" href="//dzycyuuhttkib.cloudfront.net/static/favicon/android-chrome-192x192.aa563c1f52d7.png" sizes="192x192"/>
+      <link rel="icon" type="image/png" href="//dzycyuuhttkib.cloudfront.net/static/favicon/favicon-96x96.cd774e7aaf79.png" sizes="96x96"/>
+      <link rel="icon" type="image/png" href="//dzycyuuhttkib.cloudfront.net/static/favicon/favicon-16x16.38d504a8fb3a.png" sizes="16x16"/>
+      <link rel="manifest" href="//dzycyuuhttkib.cloudfront.net/static/favicon/manifest.ab97c58a7c34.json"/>
+      <meta name="msapplication-TileColor" content="#d21535"/>
+      <meta name="msapplication-TileImage" content="//dzycyuuhttkib.cloudfront.net/static/favicon/mstile-144x144.f0cba2b69b1b.png"/>
+      <meta name="theme-color" content="#d21535"/>
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900" rel="stylesheet" type="text/css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"/>
+   </head>
+   <body>
+      <div id="fb-root"/>
+      <script id="allauth-facebook-settings" type="application/json">
+{"loginOptions": {"scope": "email"}, "loginByTokenUrl": "https://www.smallslive.com/accounts/facebook/login/token/", "csrfToken": "9KX8h8AOidxoMDR0erWuRyiCO0d6V105", "channelUrl": "https://www.smallslive.com/accounts/facebook/channel/", "logoutUrl": "https://www.smallslive.com/accounts/logout/", "appId": "1417841508485192", "locale": "en_US", "version": "v2.2", "errorUrl": "https://www.smallslive.com/accounts/social/login/error/", "cancelUrl": "https://www.smallslive.com/accounts/social/login/cancelled/", "loginUrl": "https://www.smallslive.com/accounts/facebook/login/"}
+</script>
+      <script type="text/javascript" src="//dzycyuuhttkib.cloudfront.net/static/facebook/js/fbconnect.63f584c9d53a.js"/>
+      <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content login-modal">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+               </button>
+               <div class="modal-body">
+                  <div class="col-xs-12">
+                     <h1 class="login-modal__title">Sign in</h1>
+                     <p class="login-modal__text--heavy">Sign in to access our live stream and audio video archive.</p>
+                  </div>
+                  <form role="form" id="form-login" method="post" action="/accounts/login/?next=/events/calendar/">
+                     <input type="hidden" name="csrfmiddlewaretoken" value="9KX8h8AOidxoMDR0erWuRyiCO0d6V105"/>
+                     <div class="col-xs-12">
+                        <div class="form-group">
+                           <input type="email" class="form-control" name="login" placeholder="Your email"/>
+                           <p class="form-error-text hidden" id="login-error"/>
+                        </div>
+                        <input type="password" class="form-control" name="password" placeholder="Your password"/>
+                        <p class="form-error-text hidden" id="password-error"/>
+                     </div>
+                     <div class="col-xs-12">
+                        <div class="col-sm-6 col-xs-12 vcenter">
+                           <input type="checkbox" name="remember"/>
+                           <span class="checkbox-label">Remember me</span>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 vcenter">
+                           <a class="forgot-password" href="/accounts/password/reset/">Forgot password</a>
+                        </div>
+                     </div>
+                     <div class="empty-separator-20"/>
+                     <div class="col-sm-5 col-xs-12">
+                        <input class="login-button" value="Sign in" type="submit"/>
+                     </div>
+                     <div class="col-sm-7 col-xs-12">
+                        <a class="fb-login-button" href="javascript:allauth.facebook.login('', 'authenticate', 'login')">
+                           <div class="vcenter">
+                              <i class="fa fa-facebook-square"/>
+                           </div>
+                           <div class="vcenter">Sign in with Facebook</div>
+                        </a>
+                     </div>
+                     <div class="col-xs-12 modal-separator"/>
+                     <div class="col-xs-12">
+                        <h2 class="login-modal__subtitle">Not a member of SmallsLIVE?</h2>
+                        <a href="/accounts/signup/" class="login-modal__cta-signup">Click here to become a member</a>
+                        <p class="login-modal__text attention">
+                           Attention: Users from the old site must re-enroll for the new site. Please
+                           <a href="/accounts/signup/">click here</a>
+                           to enroll.
+                        </p>
+                        <p class="login-modal__text">
+                           Smalls Musicians - if you have not yet been registered please
+                           <a href="/contact-and-info/">contact us</a>
+                           to set up the artist account.
+                        </p>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <nav class="navbar navbar-default mobile-navbar visible-xs visible-sm" role="navigation">
+         <div class="container mobile-menu">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed mobile-nav__button" data-toggle="collapse" data-target="#smalls-menu-collapse">
+                  <i class="fa fa-bars"/>
+               </button>
+               <button type="button" class="navbar-toggle collapsed mobile-nav__button" data-toggle="collapse" data-target="#search-collapse">
+                  <i class="fa fa-search"/>
+               </button>
+               <a href="/" class="smalls-hor-logo">
+                  <img src="//dzycyuuhttkib.cloudfront.net/static/smalls_live_horizontal_negative.c29032d66a54.svg" alt=""/>
+               </a>
+            </div>
+            <div class="collapse navbar-collapse menu" id="smalls-menu-collapse">
+               <div class="header-top">
+                  <div class="container">
+                     <ul class="nav navbar-nav">
+                        <li>
+                           <a href="/">Home</a>
+                        </li>
+                        <li>
+                           <a href="/events/live-stream/">Live now!</a>
+                        </li>
+                        <li>
+                           <a href="/archive/">Archive</a>
+                        </li>
+                        <li>
+                           <a href="/store/">SmallsLIVE Store</a>
+                        </li>
+                        <li>
+                           <a role="button" data-toggle="collapse" href="#mobile-nav-info-links" aria-expanded="false" aria-controls="mobile-nav-info-links">
+                              Info
+                              <i class="fa fa-caret-down"/>
+                           </a>
+                        </li>
+                        <li class="nopadding">
+                           <ul class="mobile-navbar__submenu collapse" id="mobile-nav-info-links">
+                              <li class="hidden-sm">
+                                 <a href="/contact-and-info/">Contact &amp; Info</a>
+                              </li>
+                              <li class="hidden-sm">
+                                 <a href="/about-us/">About us</a>
+                              </li>
+                              <li class="hidden-sm">
+                                 <a href="/revenue-share/">Revenue Share</a>
+                              </li>
+                              <li class="hidden-sm">
+                                 <a href="/photo-gallery/">Photo Gallery</a>
+                              </li>
+                              <li class="hidden-sm">
+                                 <a href="/newsletters/">Newsletters</a>
+                              </li>
+                              <li class="hidden-sm">
+                                 <a href="/static_page/press/">Press</a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li role="presentation" class="divider"/>
+                        <li>
+                           <a href="https://www.mezzrow.com" target="_blank">Mezzrow</a>
+                        </li>
+                        <li role="presentation" class="divider"/>
+                        <li>
+                           <a class="mobile-nav__signin-button" href="#" data-toggle="modal" data-target="#logIn">Sign in</a>
+                        </li>
+                        <li>
+                           <a class="mobile-nav__signup-button" href="/accounts/signup/">Sign up</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="collapse navbar-collapse search-dropdown" id="search-collapse">
+               <div class="header-top">
+                  <div class="container">
+                     <ul class="nav navbar-nav">
+                        <li>
+                           <div class="search">
+                              <form action="/search/artist/" method="get">
+                                 <div class="form-group has-feedback">
+                                    <input id="header--search" type="text" name="q" class="form-control search__input" placeholder="Search our Archive..."/>
+                                    <i class="fa fa-search form-control-feedback"/>
+                                 </div>
+                              </form>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <header class="container hidden-xs hidden-sm">
+         <a href="/" class="smalls-logo">
+            <img src="//dzycyuuhttkib.cloudfront.net/static/logo.5b9e90cb4dc7.svg" width="101" height="100" alt=""/>
+         </a>
+         <ul class="header-social clearfix">
+            <li class="header-social__item">
+               <a target="_blank" href="https://www.facebook.com/smallsjazzclubnyc">
+                  <i class="fa fa-facebook"/>
+               </a>
+            </li>
+            <li class="header-social__item">
+               <a target="_blank" href="https://twitter.com/smallsjazzclub">
+                  <i class="fa fa-twitter"/>
+               </a>
+            </li>
+            <li class="header-social__item">
+               <a target="_blank" href="https://instagram.com/smallsjazzclub/">
+                  <i class="fa fa-instagram"/>
+               </a>
+            </li>
+         </ul>
+         <ul class="header-login clearfix">
+            <li class="header-login__item">
+               <a href="#" data-toggle="modal" data-target="#logIn">Sign in</a>
+            </li>
+            <li class="header-login__item">
+               <a href="/accounts/signup/">Sign up</a>
+            </li>
+         </ul>
+         <div class="header-nav-group">
+            <nav class="navigation navbar-collapse">
+               <ul class="navigation__menu">
+                  <li class="navigation__item ">
+                     <a href="/">
+                        <i class="navigation__icon fa fa-2x fa-home "/>
+                        <span class="menu-label">Home</span>
+                     </a>
+                  </li>
+                  <li class="navigation__separator"/>
+                  <li class="navigation__item ">
+                     <a href="/events/live-stream/">
+                        <i class="navigation__icon fa fa-play-circle"/>
+                        <span class="menu-label">Live now!</span>
+                     </a>
+                  </li>
+                  <li class="navigation__separator"/>
+                  <li class="navigation__item ">
+                     <a href="/archive/">
+                        <i class="navigation__icon fa fa-video-camera"/>
+                        <span class="menu-label">Archive</span>
+                     </a>
+                  </li>
+                  <li class="navigation__separator"/>
+                  <li class="navigation__item ">
+                     <a href="/store/">
+                        <i class="navigation__icon fa fa-shopping-cart"/>
+                        <span class="menu-label">SmallsLIVE Store</span>
+                     </a>
+                  </li>
+                  <li class="navigation__separator"/>
+                  <li class="navigation__item ">
+                     <a href="/contact-and-info/">
+                        <i class="navigation__icon fa fa-info-circle"/>
+                        <span class="menu-label">Info</span>
+                     </a>
+                  </li>
+                  <li class="navigation__separator"/>
+                  <li class="navigation__item hide-on-search">
+                     <a href="https://www.mezzrow.com" target="_blank">
+                        <img id="mezzrow-logo-header" src="//dzycyuuhttkib.cloudfront.net/static/image/mezzrow-logo-negative.2d273630e8d1.svg"/>
+                     </a>
+                  </li>
+                  <li class="navigation__separator hide-on-search"/>
+                  <li class="navigation__item nav-search">
+                     <div class="search">
+                        <form action="/search/artist/" method="get">
+                           <div class="form-group has-feedback" id="header-search-container">
+                              <input id="header--search" type="text" name="q" class="form-control search__input" placeholder="Search SmallsLIVE"/>
+                              <i class="fa fa-search form-control-feedback"/>
+                           </div>
+                        </form>
+                     </div>
+                  </li>
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <div class="content-wrapper">
+         <section class="schedule-header">
+            <div class="archive-new__date-browser__header">
+               <div class="archive-new__date-browser__header-left">
+                  <h1>Calendar</h1>
+                  <div class="icons-legend">
+                     <span class="helper">Icons legend:</span>
+                     <i class="fa fa-music"/>
+                     <span class="icon-meaning">Audio available</span>
+                     <i class="fa fa-video-camera"/>
+                     <span class="icon-meaning">Video available</span>
+                     <i class="fa fa-shopping-cart"/>
+                     <span class="icon-meaning">Tracks / CD available</span>
+                  </div>
+               </div>
+               <div class="archive-new__date-browser__date-picker" id="schedule__date-picker">
+                  <input type="text" placeholder="Select a month" readonly="readonly"/>
+                  <i class="fa fa-caret-down"/>
+               </div>
+            </div>
+         </section>
+         <section class="schedule flex container">
+            <div class="schedule__nav flex col-xs-6 col-md-3">
+               <a href="/events/calendar/?week=-1">
+                  <div class="flex-center">
+                     <div class="icon">
+                        <i class="fa fa-angle-left"/>
+                     </div>
+                     <div class="text">
+                        <span>View</span>
+                        previous
+                        <br/>
+                        14 days
+                     </div>
+                  </div>
+               </a>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="2">
+               <h2 class="day__date">Friday 2/16/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13658" class="day__event-title ">
+                     <a href="/events/13658-dave-stryker-quartet/">Dave Stryker Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13659" class="day__event-title ">
+                     <a href="/events/13659-david-weiss-sextet/">David Weiss Sextet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13712" class="day__event-title ">
+                     <a href="/events/13712-after-hours-jam-session-with-joe-farnsworth/">After-hours Jam Session with Joe Farnsworth </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="3">
+               <h2 class="day__date">Saturday 2/17/2018</h2>
+               <dl>
+                  <dt class="day__event-time">4:30 PM - 7:00 PM</dt>
+                  <dd data-event-id="13713" class="day__event-title ">
+                     <a href="/events/13713-smalls-showcase-kate-cosco-laura-dreyer-project/">Smalls Showcase: Kate Cosco &amp; Laura Dreyer Project </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13700" class="day__event-title ">
+                     <a href="/events/13700-jonathan-voltzok-slide-hampton-quintet/">Jonathan Voltzok &amp; Slide Hampton Quintet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13660" class="day__event-title ">
+                     <a href="/events/13660-david-weiss-sextet/">David Weiss Sextet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13693" class="day__event-title ">
+                     <a href="/events/13693-philip-harper-quintet/">Philip Harper Quintet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="4">
+               <h2 class="day__date">Sunday 2/18/2018</h2>
+               <dl>
+                  <dt class="day__event-time">1:00 PM - 3:00 PM</dt>
+                  <dd data-event-id="13674" class="day__event-title ">
+                     <a href="/events/13674-vocal-masterclass-with-marion-cowings/">Vocal Masterclass with Marion Cowings </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">4:30 PM - 7:00 PM</dt>
+                  <dd data-event-id="13678" class="day__event-title ">
+                     <a href="/events/13678-ai-murakami-trio-feat-sacha-perry/">Ai Murakami Trio feat. Sacha Perry </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13651" class="day__event-title ">
+                     <a href="/events/13651-andy-farber-septet/">Andy Farber Septet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13724" class="day__event-title ">
+                     <a href="/events/13724-joe-magnarelli-quartet/">Joe Magnarelli Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13703" class="day__event-title ">
+                     <a href="/events/13703-robert-edwards-after-hours-jam-session/">Robert Edwards - After-hours Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="5">
+               <h2 class="day__date">Monday 2/19/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13706" class="day__event-title ">
+                     <a href="/events/13706-joe-martin-quartet/">Joe Martin Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13817" class="day__event-title ">
+                     <a href="/events/13817-ari-hoenig-trio/">Ari Hoenig Trio </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13716" class="day__event-title ">
+                     <a href="/events/13716-jonathan-barber-group-after-hours-jam-session/">Jonathan Barber Group &amp; After-hours Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="6">
+               <h2 class="day__date">Tuesday 2/20/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13818" class="day__event-title ">
+                     <a href="/events/13818-ian-hendrickson-smith-quartet/">Ian Hendrickson-Smith Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13684" class="day__event-title ">
+                     <a href="/events/13684-abraham-burton-quartet/">Abraham Burton Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13803" class="day__event-title ">
+                     <a href="/events/13803-malik-mclaurine-after-hours/">Malik McLaurine "After-hours" </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="7">
+               <h2 class="day__date">Wednesday 2/21/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13661" class="day__event-title ">
+                     <a href="/events/13661-russ-nolan-quartet/">Russ Nolan Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13662" class="day__event-title ">
+                     <a href="/events/13662-harold-mabern-trio/">Harold Mabern Trio </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13687" class="day__event-title ">
+                     <a href="/events/13687-jovan-alexandre-after-hours-jam-session/">Jovan Alexandre - After-hours Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="8">
+               <h2 class="day__date">Thursday 2/22/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13663" class="day__event-title ">
+                     <a href="/events/13663-willy-rodriguez-quintet/">Willy Rodriguez Quintet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13631" class="day__event-title ">
+                     <a href="/events/13631-claffy-special-edition/">Claffy Special Edition </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13689" class="day__event-title ">
+                     <a href="/events/13689-jonathan-thomas-after-hours-jam-session/">Jonathan Thomas - "After-hours" Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="9">
+               <h2 class="day__date">Friday 2/23/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13665" class="day__event-title ">
+                     <a href="/events/13665-lawrence-leathers-quartet/">Lawrence Leathers Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13666" class="day__event-title ">
+                     <a href="/events/13666-immanuel-wilkins-quartet/">Immanuel Wilkins Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13728" class="day__event-title ">
+                     <a href="/events/13728-the-corey-wallace-dubtet-after-hours/">The Corey Wallace DUBtet "After-hours" </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="10">
+               <h2 class="day__date">Saturday 2/24/2018</h2>
+               <dl>
+                  <dt class="day__event-time">4:30 PM - 7:00 PM</dt>
+                  <dd data-event-id="13719" class="day__event-title ">
+                     <a href="/events/13719-smalls-showcase-mike-bond-trio/">Smalls Showcase: Mike Bond Trio </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13664" class="day__event-title ">
+                     <a href="/events/13664-lawrence-leathers-quintet/">Lawrence Leathers Quintet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13701" class="day__event-title ">
+                     <a href="/events/13701-immanuel-wilkins-quartet/">Immanuel Wilkins Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13695" class="day__event-title ">
+                     <a href="/events/13695-brooklyn-circle/">Brooklyn Circle </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="11">
+               <h2 class="day__date">Sunday 2/25/2018</h2>
+               <dl>
+                  <dt class="day__event-time">1:00 PM - 3:00 PM</dt>
+                  <dd data-event-id="13675" class="day__event-title ">
+                     <a href="/events/13675-vocal-masterclass-with-marion-cowings/">Vocal Masterclass with Marion Cowings </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">4:30 PM - 7:00 PM</dt>
+                  <dd data-event-id="13679" class="day__event-title ">
+                     <a href="/events/13679-ai-murakami-trio-feat-sacha-perry/">Ai Murakami Trio feat. Sacha Perry </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13720" class="day__event-title ">
+                     <a href="/events/13720-jc-styllessteve-nelson-hutcherson-band/">JC Stylles/Steve Nelson Hutcherson Band </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13715" class="day__event-title ">
+                     <a href="/events/13715-nick-hempton-band/">Nick Hempton Band </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13697" class="day__event-title ">
+                     <a href="/events/13697-hillel-salem-after-hours-jam-session/">Hillel Salem - After-hours Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="12">
+               <h2 class="day__date">Monday 2/26/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13707" class="day__event-title ">
+                     <a href="/events/13707-ari-hoenig-trio/">Ari Hoenig Trio </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 4:00 AM</dt>
+                  <dd data-event-id="13717" class="day__event-title ">
+                     <a href="/events/13717-jonathan-michel-after-hours-jam-session/">Jonathan Michel : After-hours Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="13">
+               <h2 class="day__date">Tuesday 2/27/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13685" class="day__event-title ">
+                     <a href="/events/13685-steve-nelson-quartet/">Steve Nelson Quartet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13725" class="day__event-title ">
+                     <a href="/events/13725-frank-lacy-group/">Frank Lacy Group </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13804" class="day__event-title ">
+                     <a href="/events/13804-malik-mclaurine-after-hours/">Malik McLaurine "After-hours" </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="14">
+               <h2 class="day__date">Wednesday 2/28/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13668" class="day__event-title ">
+                     <a href="/events/13668-jared-gold-trio/">Jared Gold Trio </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13667" class="day__event-title ">
+                     <a href="/events/13667-greg-murphy-quintet/">Greg Murphy Quintet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13681" class="day__event-title ">
+                     <a href="/events/13681-aaron-seeber-after-hours-jam-session/">Aaron Seeber - After-hours Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="day flex col-xs-6 col-md-3" data-position="15">
+               <h2 class="day__date">Thursday 3/1/2018</h2>
+               <dl>
+                  <dt class="day__event-time">7:30 PM - 10:00 PM</dt>
+                  <dd data-event-id="13730" class="day__event-title ">
+                     <a href="/events/13730-davy-mooney-quintet/">Davy Mooney Quintet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">10:30 PM - 1:00 AM</dt>
+                  <dd data-event-id="13731" class="day__event-title ">
+                     <a href="/events/13731-darrian-douglas-quintet/">Darrian Douglas Quintet </a>
+                     <span class="day__event-features"/>
+                  </dd>
+                  <dt class="day__event-time">1:00 AM - 4:00 AM</dt>
+                  <dd data-event-id="13691" class="day__event-title ">
+                     <a href="/events/13691-davis-whitfield-after-hours-jam-session/">Davis Whitfield - After-hours Jam Session </a>
+                     <span class="day__event-features"/>
+                  </dd>
+               </dl>
+            </div>
+            <div class="schedule__nav flex col-xs-6 col-md-3" data-position="16">
+               <a href="/events/calendar/?week=1">
+                  <div class="flex-center">
+                     <div class="text">
+                        <span>View</span>
+                        next
+                        <br/>
+                        14 days
+                     </div>
+                     <div class="icon">
+                        <i class="fa fa-angle-right"/>
+                     </div>
+                  </div>
+               </a>
+            </div>
+         </section>
+      </div>
+      <footer class="container">
+         <div class="footer-content">
+            <img class="footer-logo" src="//dzycyuuhttkib.cloudfront.net/static/logo-black.f4b4b96e18d2.svg" alt=""/>
+            <ul class="footer-nav">
+               <li>
+                  <a href="/static_page/privacy/">Privacy</a>
+               </li>
+               <li>
+                  <a href="/terms-and-conditions/">Terms and Conditions</a>
+               </li>
+               <li>
+                  <a href="/contact-and-info/">Contact &amp; Info</a>
+               </li>
+            </ul>
+            <address>
+               <a href="https://goo.gl/maps/s4jFT">SmallsLIVE  |  183 West 10th Street, Basement  |  New York City, NY 10014</a>
+               <br/>
+               <a href="mailto:smallslive@gmail.com">smallslive@gmail.com</a>
+            </address>
+         </div>
+      </footer>
+      <script type="text/javascript" src="//dzycyuuhttkib.cloudfront.net/static/js/main.7922584cad8a.js" charset="utf-8"/>
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga')
+  ga('create', 'UA-68202880-1', 'auto');
+  ga('send', 'pageview');
+</script>
+      <script src="//dzycyuuhttkib.cloudfront.net/static/js/bootstrap-datepicker.c4d744b227a1.js"/>
+      <script src="//dzycyuuhttkib.cloudfront.net/static/js/schedule_datepicker.a0039553bd4a.js"/>
+      <script>
+  var date = new Date(2018, 1, 1);
+  $datePicker.datepicker("setDate", date);
+  </script>
+   </body>
+</html>
